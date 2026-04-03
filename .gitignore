@@ -1,0 +1,65 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.fls
+*.fdb_latexmk
+*.glg
+*.glo
+*.gls
+*.idx
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.nav
+*.nlo
+*.nls
+*.out
+*.pdf
+*.pyg
+*.run.xml
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.toc
+*.xdv
+*-blx.bib
+*-blx.aux
+*-blx.bcf
+*-blx.blg
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
