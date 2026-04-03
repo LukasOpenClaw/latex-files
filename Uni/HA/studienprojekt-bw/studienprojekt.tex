@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel} % german as language
+\usepackage{csquotes}
+\usepackage[onehalfspacing]{setspace} % 1.5 Zeilenabstand
+\usepackage{parskip} % for paragraph line skip
+\usepackage{fancyhdr} % for headers
+\fancyhf{}
+\fancyhead[C]{\nouppercase{\firstmark}}
+\renewcommand{\headrulewidth}{0pt} % change line under header
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}
+\setlength{\headheight}{15.04742pt}
+\fancypagestyle{maintext}{ % pagestyle for main text for page numbers
+    \fancyhf{}
+%    \fancyhead[C]{\nouppercase{\firstmark}}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+% Update \sectionmark to show first section in header
+\renewcommand{\sectionmark}[1]{%
+    \markboth{\thesection\ #1}{}
+}
+\renewcommand{\subsectionmark}[1]{}
+
+% for tables/figures
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{array}
+\graphicspath{ {figures/} } % set path to figures
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\renewcommand{\listtablename}{Tabellenverzeichnis}
+
+% Appendix
+\usepackage[toc,page]{appendix}
+\renewcommand\appendixname{Anhang} % Change name to German
+\renewcommand\appendixpagename{Anhang}
+\renewcommand\appendixtocname{Anhang}
+
+
+% \usepackage{sectsty} -> falls section font size 14 haben muss
+% \sectionfont{\large\bfseries}
+
+% use geometry for page layout
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+
+% Citation: BibLaTeX als author-year style, benötigt xelatex->biber->xelatex(2x) als recipe!
+\usepackage[
+backend=biber,
+style=authoryear]{biblatex}
+\addbibresource{refs.bib}
+
+% Start des Dokuments
+\begin{document}
+
+% Add centered Title page
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0.5cm}
+            
+        \LARGE
+        \textbf{Studienprojekt zum Praxissemester im Lehramtsstudium}
+            
+        \vspace{0.2cm}
+        \Large
+        Bildungswissenschaften
+            
+        \vspace{2cm}
+            
+        \textbf{Lukas Schaffrath}\\
+        Matrikelnummer: 411793\\
+        Lehramt Technik/Englisch\\
+        Master für Gymnasien und Gesamtschulen
+            
+        \vspace{2cm}
+        Vorbereitungsseminar Bildungswissenschaften\\            
+        Dozent: Wolfhard Horn
+            
+        \vspace{2cm}
+            
+            
+        \Large
+        Institut für Erziehungswissenschaft\\
+        RWTH Aachen University\\
+        Wintersemester 2024/2025\\
+        
+    \end{center}
+\end{titlepage}
+
+% Add table of contents with emtpy page number
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\tableofcontents
+
+% List of figures and tables
+%\newpage
+%\thispagestyle{empty}
+%\listoffigures
+%\vspace{0.5cm}
+%\listoftables
+
+
+% New page, page count to 1
+\newpage
+\setcounter{page}{1}
+\pagestyle{maintext}
+
+% Add Main Text
+\section{Einleitung}
+Dieses Studienprojekt, welches im Zuge des Master Lehramtsstudiums erstellt wurde, untersucht 
+
+% print bibliography with heading in table of contents
+\newpage
+\printbibliography[heading=bibintoc]
+\pagestyle{empty}
+
+% Starte Anhang
+\newpage
+\begin{appendices}
+
+    % Sektionen
+    \section{Tabellarischer Verlaufsplan zur ersten Unterrichtsstunde}
+    \begin{center}
+        % \includegraphics[height=14cm, angle=90, keepaspectratio]{static/Unterrichtsstunde_1_Tabelle.pdf}
+        \captionof{table}{Tabellarischer Verlaufsplan zur ersten Unterrichtsstunde}
+    \end{center}
+    
+\end{appendices}
+
+\end{document}

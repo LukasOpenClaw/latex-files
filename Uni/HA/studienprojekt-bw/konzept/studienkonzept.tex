@@ -1,0 +1,145 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel} % german as language
+\usepackage{csquotes}
+\usepackage[onehalfspacing]{setspace} % 1.5 Zeilenabstand
+\usepackage{parskip} % for paragraph line skip
+\usepackage{fancyhdr} % for headers
+\fancyhf{}
+\fancyhead[C]{\nouppercase{\firstmark}}
+\renewcommand{\headrulewidth}{0pt} % change line under header
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}
+\setlength{\headheight}{15.04742pt}
+\fancypagestyle{maintext}{ % pagestyle for main text for page numbers
+    \fancyhf{}
+%    \fancyhead[C]{\nouppercase{\firstmark}}
+%    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+% Update \sectionmark to show first section in header
+\renewcommand{\sectionmark}[1]{%
+    \markboth{\thesection\ #1}{}
+}
+\renewcommand{\subsectionmark}[1]{}
+
+% for tables/figures
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{array}
+\graphicspath{ {figures/} } % set path to figures
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\renewcommand{\listtablename}{Tabellenverzeichnis}
+
+%for Checklist 
+\usepackage{enumitem,amssymb}
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=$\square$}
+
+% Appendix
+\usepackage[toc,page]{appendix}
+\renewcommand\appendixname{Anhang} % Change name to German
+\renewcommand\appendixpagename{Anhang}
+\renewcommand\appendixtocname{Anhang}
+
+
+% \usepackage{sectsty} -> falls section font size 14 haben muss
+% \sectionfont{\large\bfseries}
+
+% use geometry for page layout
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+
+% Citation: BibLaTeX als author-year style, benötigt xelatex->biber->xelatex(2x) als recipe!
+\usepackage[
+backend=biber,
+style=authoryear]{biblatex}
+\addbibresource{refs.bib}
+
+% Start des Dokuments
+\begin{document}
+
+% Add centered Title page
+% \begin{titlepage}
+    \begin{center}
+        \large
+        \textbf{Studienprojekt zum Praxissemester im Lehramtsstudium}
+            
+        Konzeption für das Fach Bildungswissenschaften
+            
+        \textbf{Lukas Schaffrath}\\
+        Matrikelnummer: 411793\\
+        Lehramt Technik/Englisch\\
+        Master für Gymnasien und Gesamtschulen
+            
+        \textbf{Vorbereitungsseminar Bildungswissenschaften}\\            
+        Dozent: Wolfhard Horn\\
+        Institut für Erziehungswissenschaft\\
+        
+    \end{center}
+% \end{titlepage}
+
+% Add table of contents with emtpy page number
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\tableofcontents
+
+% List of figures and tables
+%\newpage
+%\thispagestyle{empty}
+%\listoffigures
+%\vspace{0.5cm}
+%\listoftables
+
+\vspace{2cm}
+% New page, page count to 1
+\setcounter{page}{1}
+\pagestyle{maintext}
+
+% Add Main Text
+\section{Einleitung}
+Im Rahmen meines Praxissemesters untersuche ich die Schüleraktivität während des Unterrichtseinstiegs in unterschiedlichen Fachbereichen, um mögliche Unterschiede zwischen technischen und sprachlichen Fächern zu identifizieren. Der Unterrichtseinstieg spielt eine zentrale Rolle für die Lernmotivation und den weiteren Verlauf der Stunde, weshalb die Analyse der Schülerbeteiligung in dieser Phase besonders aufschlussreich sein kann.\\
+
+Die Beobachtung erfolgt mithilfe einer standardisierten Checkliste, die es ermöglicht, die Schüleraktivität in verschiedenen Kategorien (z. B. Meldeverhalten, Fragen, aktive Teilnahme) quantitativ zu erfassen. Dabei werden Merkmale wie die Art des Unterrichtseinstiegs (z. B. Frontalunterricht, Frage-Antwort-Sequenz, mediengestützter Einstieg), die Anzahl der aktiven Beiträge sowie nonverbale Verhaltensweisen dokumentiert. Die gesammelten Daten werden nach Abschluss des Praktikums ausgewertet, um zu evaluieren, ob und wie sich die Schüleraktivität in den beiden Fachbereichen unterscheidet. Ziel ist es, Rückschlüsse auf mögliche fachspezifische Dynamiken zu ziehen und Ansatzpunkte für eine motivierende Unterrichtsgestaltung zu entwickeln. Die Checkliste ist auf Seite 2 einsehbar.
+
+\newpage
+\section{Checkliste}
+
+\begin{itemize}
+    \item Daten
+        \begin{checklist}
+            \item Datum:
+            \item Fach:
+            \item Klasse: 
+            \item Einstiegsart:   
+            \item Dauer des Einstiegs:
+            \item Materialien:
+        \end{checklist}
+    \item Schüleraktivität
+        \begin{checklist}
+            \item Anzahl der Meldungen:
+            \item Verteilung (Gleichmäßig/Wenige Dominant):
+            \item Nonverbal (Aufmerksam/Unaufmerksam):
+            \item Aktive Schüler:
+        \end{checklist}
+    \item Auffälligkeiten:
+\end{itemize}
+
+% print bibliography with heading in table of contents
+\newpage
+\printbibliography[heading=bibintoc]
+\pagestyle{empty}
+
+% Starte Anhang
+%\newpage
+%\begin{appendices}
+
+    % Sektionen
+ %   \section{Tabellarischer Verlaufsplan zur ersten Unterrichtsstunde}
+  %  \begin{center}
+        % \includegraphics[height=14cm, angle=90, keepaspectratio]{static/Unterrichtsstunde_1_Tabelle.pdf}
+  %      \captionof{table}{Tabellarischer Verlaufsplan zur ersten Unterrichtsstunde}
+   % \end{center}
+    
+%\end{appendices}
+
+\end{document}

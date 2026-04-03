@@ -1,0 +1,168 @@
+\documentclass[12pt]{article}
+\usepackage[T1, EU1]{fontenc}
+\usepackage[ngerman]{babel} % german as language
+\usepackage{csquotes}
+\usepackage[onehalfspacing]{setspace} % 1.5 Zeilenabstand
+\usepackage{parskip} % for paragraph line skip
+\usepackage{fancyhdr} % for headers
+\fancyhf{}
+\fancyhead[C]{\nouppercase{\firstmark}}
+\renewcommand{\headrulewidth}{0pt} % change line under header
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}
+\setlength{\headheight}{15.04742pt}
+\fancypagestyle{maintext}{ % pagestyle for main text for page numbers
+    \fancyhf{}
+    \fancyhead[C]{\nouppercase{\firstmark}}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+% Update \sectionmark to show first section in header
+\renewcommand{\sectionmark}[1]{%
+    \markboth{#1}{}
+}
+\renewcommand{\subsectionmark}[1]{}
+
+% Make that the sections don't have a number before them
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+% for tables/figures
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{array}
+\graphicspath{ {figures/} } % set path to figures
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\renewcommand{\listtablename}{Tabellenverzeichnis}
+
+% Appendix
+\usepackage[toc,page]{appendix}
+\renewcommand\appendixname{Anhang} % Change name to German
+\renewcommand\appendixpagename{Anhang}
+\renewcommand\appendixtocname{Anhang}
+
+
+% \usepackage{sectsty} -> falls section font size 14 haben muss
+% \sectionfont{\large\bfseries}
+
+% use geometry for page layout
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+
+% Citation: BibLaTeX als author-year style, benötigt xelatex->biber->xelatex(2x) als recipe!
+\usepackage[
+backend=biber,
+style=apa]{biblatex}
+\addbibresource{refs.bib}
+
+% Start des Dokuments
+\begin{document}
+
+\thispagestyle{empty}
+% Add centered Title page
+%\begin{titlepage}
+    \begin{center}
+            
+        \LARGE
+        \textbf{Digitale Transformation und politische Debatten}
+            
+        \vspace{0.2cm}
+        \Large
+        Essay 2
+
+        \vspace{2cm}
+            
+        \textbf{Lukas Schaffrath}\\
+        Matrikelnummer: 411793\\
+        Lehramt Technik/Englisch\\
+        Master für Gymnasien und Gesamtschulen
+            
+        \vspace{2cm}
+            
+        Ringseminar Transformationssoziologie: Technik- und Organisationssoziologie\\
+        Technik, Gender und Gesellschaft\\
+        Dozent: Tim Franke
+            
+        \vspace{2cm}
+            
+            
+        \Large
+        Lehrstuhl für Technik- und Organisationssoziologie\\
+        Institut für Soziologie\\
+        RWTH Aachen University\\
+        Wintersemester 2024/2025\\
+        28. Februar 2025
+            
+    \end{center}
+% \end{titlepage}
+
+% Add table of contents with emtpy page number
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\tableofcontents
+
+% List of figures and tables
+%\newpage
+%\thispagestyle{empty}
+%\listoffigures
+%\vspace{0.5cm}
+%\listoftables
+
+
+% New page, page count to 1
+\newpage
+\setcounter{page}{1}
+\pagestyle{maintext}
+
+% Add Main Text
+
+% Einleitung
+\section{Einleitung}
+Die Digitalisierung verändert unsere Gesellschaft tiefgreifend – von der Automatisierung industrieller Prozesse über den Wandel sozialer Kommunikation bis hin zur Plattformisierung der Arbeitswelt. Während diese Transformation bereits heute Millionen von Arbeitsplätzen betrifft, bleibt sie in politischen Debatten oft erstaunlich unterrepräsentiert. Themen wie Migration, Klimaschutz oder Rentenpolitik dominieren Wahlprogramme und öffentliche Diskussionen, wobei zentrale Fragen zur Zukunft der Arbeit und den Herausforderungen durch Künstliche Intelligenz (fortführend KI) oder Plattformkapitalismus meist nur oberflächlich behandelt werden. Beispielsweise wird im aktuellen 10-Punkte-Plan der CDU/CSU (zur Bundestagswahl 2025) nur ein Ausbau der Zuständigkeiten zur Digitalisierung erwähnt, dementsprechend kein direkter Plan für eine digitale Zukunft \autocite[vgl.][]{cducsu_10_2025}. Erst bei Betrachtung des Wahlprogramms wird "Wir treiben mit Digitalisierung sowie souveränen KI- und Cloudanwendungen die Re-Industrialisierung unseres Landes voran. Zukunftstechnologien brauchen Freiräume, der Staat braucht klare Zuständigkeiten. Dazu richten wir ein Bundesdigitalministerium ein." \autocite[vgl.][]{cducsu_kurzfassung_2025} erwähnt, allerdings ohne einen direkten Plan, wie das Herantreiben der Digitalisierung genau geschehen soll.
+
+Obwohl die digitale Transformation die Arbeitswelt tiefgreifend verändert, wird sie in politischen Wahlprogrammen und gesellschaftlichen Debatten oft vernachlässigt. Dies könnte an der Komplexität des Themas, dem Einfluss wirtschaftlicher Interessen und der fehlenden politischen Regulierungskompetenz liegen. Dieses Problem zeigt sich besonders in der Diskussion über Plattformarbeit. Darunter werden alle Dienstleistungen verstanden, die über web-basierte Plattformen vermittelt oder erbracht werden \autocite[vgl.][]{bertelsmann_stiftung_plattformarbeit_2019}. 
+Während Unternehmen wie Uber, Lieferando oder Amazon digitale Arbeitsstrukturen längst etabliert haben, hinken gesetzliche Regulierungen hinterher: \enquote{Eine gesetzliche Regelung hierzu gibt es noch nicht.} \autocite[vgl.][]{bmas_bundesministerium_nodate}. 
+Die Arbeitsbedingungen von Plattformarbeiter*innen sind oft unsicher, Löhne schwanken, und Arbeitnehmerrechte sind unzureichend geschützt, wie die oben erwähnte Studie der Bertelsmann Stiftung zeigt \autocite[vgl.][S. 25]{bertelsmann_stiftung_plattformarbeit_2019}. 
+Trotz dieser realen Auswirkungen auf den Arbeitsmarkt bleibt das Thema in Wahlkämpfen weitgehend unbeachtet, wie das Wahlprogramm der CDU/CSU zeigt. 
+
+Dieses Essay untersucht, warum die digitale Transformation der Arbeitswelt in politischen Debatten so wenig Beachtung findet. Zunächst werden die strukturellen Veränderungen durch Plattformkapitalismus und KI beleuchtet. Anschließend folgt eine Analyse, inwiefern Wahlprogramme und politische Strategien die Digitalisierung als Thema aufgreifen. Abschließend werden mögliche Gründe für die politische Vernachlässigung sowie Lösungsansätze diskutiert.
+
+% Hauptteil
+\section{Der Digitale Wandel und politische Vernachlässigung}
+Die digitale Transformation hat in den vergangenen Jahrzehnten tiefgreifende Veränderungen in vielen gesellschaftlichen Bereichen bewirkt. Besonders im Bereich Arbeit sind die Auswirkungen spürbar: Automatisierung, Plattformisierung und die algorithmische Steuerung von Arbeitsprozessen stellen traditionelle Beschäftigungsformen infrage und führen zu neuen Unsicherheiten für Arbeitnehmer*innen. Während die eine Perspektive betont, dass der digitale Wandel durch neue Technologien Flexibilität und Innovation ermöglicht, kritisiert die andere, dass diese Veränderungen vor allem bestehende Ungleichheiten verstärken und zu neuen Formen prekärer Arbeit führen. 
+
+Prekarisierung beschreibt einen Entwicklungstrend, der aufzeigt, dass die Vernetzung und Digitalisierung mit betrieblichen Flexibilisierungsstrategien, Leistungsverdichtung, Überwachung und Kontrolle sowie vielfältigen Abwertungsprozessen einhergeht \autocite[vgl.][193f.]{martin_digitale_2017}. Diese Entwicklung bedeutet demnach einen starken Wandel in der Arbeitswelt, besonders in der Plattformarbeit. Wie oben beschrieben stellt Plattformarbeit ein zentrales Merkmal der modernen Arbeitswelt dar, die jedoch nur einen Teil einer intensiven Transformation einnimmt. Block und Pohle betonen, dass der Digitalisierung das Ausmaß und die Reichweite einer epochalen Transformation zugeschrieben wird, die mit der industriellen Revolution vergleichbar ist \autocite[vgl.][190]{block_digitalisierung_2023}. Neben Plattformarbeit ist die Automatisierung von Arbeitsprozessen ein weiterer entscheidender Faktor der digitalen Transformation. Durch den Einsatz von KI und maschinellem Lernen können zunehmend kognitive Tätigkeiten von Algorithmen übernommen werden, während in der Vergangenheit eher manuelle Arbeiten durch Maschinen ersetzt wurden. Hier stellte das Institut für Arbeitsmarkt- und Berufsforschung bereits 2021 eine Berechnung vor, die zeigte, dass zukünftig komplexere Tätigkeiten zunehmend automatisiert werden könnten. Der Wert der sozialversicherungspflichtigen Beschäftigten, die in einem Beruf mit Substituierbarkeitspotenzial arbeiten, lag im Jahr 2019 bei ca. 34\%, Tendenz steigend \autocite[vgl.][1]{iab_iab_2021}. Dies könnte eine internationale Arbeitsplatzverlagerung zur Folge haben, im Zuge dessen sich die Arbeitswelt in extremem Maße verändern könnte. Trotz dieser tiefgreifenden Veränderungen bleibt die politische Auseinandersetzung mit dem Thema jedoch erstaunlich begrenzt. 
+
+Ein Blick in die Wahlprogramme der großen Parteien zeigt ein Defizit in der Auseinandersetzung mit digitaler Arbeit. Während Begriffe wie \enquote{Digitalisierung} oder \enquote{technologischer Fortschritt} mehrfach vorkommen - in der Kurzfassung des aktuellen Wahlprogramms der CDU/CSU bezogen auf \enquote{Digitalisierung} 8-Mal, \enquote{Technologien} 5-Mal \autocite[vgl.][]{cducsu_kurzfassung_2025} - fehlt es an detaillierten Vorschlägen zur Regulierung von Plattformarbeit und KI-basierten Beschäftigungsmodellen. Im Vergleich zur CDU/CSU erwähnt die in der letzten Bundestagswahl stärkste Partei das \enquote{Digitalisieren der Verwaltung} \autocite[5]{spd_regierungsprogramm_2025} mehrfach, jedoch mangelt es auch hier an konkreten Lösungen. Dennoch wird hier zumindest bezogen auf das Gesundheitssystem die Weiterentwicklung der elektronischen Patientenakte im Zuge der \enquote{Chancen der Digitalisierung} (ebd., S. 30) erwähnt. Auch hier wird in Bezug auf Pattformarbeit nur die offene Versprechung gegeben, dass dafür gesorgt wird, \enquote{dass in einer digitalen Arbeitswelt gute Arbeitsbedingungen gelten} \autocite[13]{spd_regierungsprogramm_2025}. Wie genau dies geschehen soll, wird nicht spezifiziert. Zuletzt erwähnt das Bündnis 90/Die Grünen in ihrem Wahlprogramm unter dem Punkt \enquote{Für eine schnelle und umfassende Digitalisierung} wenigstens den mangelhaften digitalen Ausbau Deutschlands und bringen einige gute Änderungsstrategien an, unter anderem den Rechtsanspruch auf Open Data zur Umsetzung des Datenschutzes, das Vorantreiben zentraler digitaler Dienste, die zentrale Steuerung aller IT-Budgets zum Vorantreiben der Digitalisierung auf Bundesebene, etc. \autocite[vgl.][35]{bundnis_90die_grunen_zusammen_2025}. Diese Partei scheint ihren potenziellen Wähler*innen also als einzige einen weitaus konkreteren Plan vorzustellen, als die anderen es tun. 
+
+Dennoch - solange technologische Innovationen rasant voranschreiten, hinken gesetzliche Regelungen oft Jahre hinterher. Dies zeigt sich auch in der Regulierung von Plattformarbeit: Während Länder wie Spanien mit dem \enquote{Rider-Gesetz} bereits Maßnahmen zum Schutz von Lieferfahrer*innen ergriffen haben, durch welches Kurierfahrer*innen von Internet-Plattformen gesetzlich abgesichert fest angestellt werden müssen, um Ausbeutung vorzubeugen \autocite[vgl.][]{schaaf_spanien_2021}, fehlen in Deutschland vergleichbare Regelungen. Dies könnte an der geringen emotionalen Mobilisierungskraft des Themas liegen, was unter Anderem bei Themen wie der Corona-Pandemie oder der Klimakrise anders sein könnte. Hier sind die Veränderungen in der Arbeitswelt spürbarer und dramatisch erkennbarer. Digitalisierung wird zwar als wirtschaftlicher Fortschritt gefeiert, aber kaum als die von Block und Pohle hervorgehobene soziale Frage behandelt \autocite[vgl.][190]{block_digitalisierung_2023}. In den obengenannten Wahlprogrammen zeigt sich dies deutlich: hier wird der digitale Wandel als Innovationsmöglichkeit beschrieben - eine kritische Auseinandersetzung mit seinen sozialen Folgen fehlt jedoch. Das Beispiel der spanischen Regierung sowie die Hervorhebung der Thematik im Wahlprogramm der Grünen zeigen, dass die politische Regulierung digitaler Arbeit in Deutschland zwar möglich sein kann, aber oft von anderen Themen und Interessen blockiert wird.
+
+Während in anderen Politikfeldern, wie etwa der Renten- oder Klimapolitik, weitreichende Maßnahmen und gesellschaftliche Debatten stattfinden (siehe Wahlprogramme), führen die kurzen Wahlzyklen sowie die direkten und sichtbaren Wirkungen der hier erwähnten Themen auf potenzielle Wähler*innen zur Vernachlässigung von eher hintergründig umsetzbaren Transformationsprozessen wie der Digitalisierung, obwohl der digitale Wandel rasant zunimmt. Gesetzesänderungen durchlaufen einen komplizierten Weg innerhalb der Bundesregierung, bis eine Entscheidung getroffen wird, weshalb oberflächlich sichtbare Themen oft anderen vorgezogen werden \autocite[vgl.][]{bmj_bundesregierung_2025}.
+
+Im Vergleich zur Rentenpolitik, die eine klar definierte Wählergruppe betrifft, die mobilisiert werden kann, sowie der Klimapolitik, die durch extreme Wetterereignisse unmittelbar erfahrbar wird (was zur Erhöhung des gesellschaftlichen Drucks auf die Politik führt), geschehen die generellen institutionellen Veränderungen der Digitalisierung graduell und haben keine klare Zielgruppe; meist sind diese eher für Betroffene selbst spürbar. Des Weiteren könnte ein weiterer entscheidender Faktor für die politische Vernachlässigung der Thematik der Einfluss großer Technologieunternehmen auf den politischen Prozess sein. Digitale Plattformen wie Amazon, Uber oder Google betreiben intensive Lobbyarbeit, um weitreichende Regelungen zu verhindern und ihre Geschäftsmodelle abzusichern. In Kalifornien, zum Beispiel, setzte sich Uber erfolgreich gegen das \enquote{AB5-Gesetz} zur besseren Absicherung von Gig-Arbeiter*innen - Arbeiter*innen, die über eine digitale Plattform zu unabhängiger Zeitarbeit kommen \autocite[vgl.][]{bmz_faire_2025} - zur Wehr, indem Millionen in eine Gegenkampagne investiert wurden. Das Gesetz stellte eine Bedrohung für eben dieses Geschäftsmodell dar, da die Gesetzesvorlage Gig-Arbeiter*innen als Angestellte und nicht als Selbstständige einzustufen versuchte, wodurch Unternehmen einen Mindestlohn und Sozialversicherungsbeiträge zahlen müssten. Durch ihre Drohungen schafften die Plattformbetreiber schließlich ein für sie positives Abstimmungsergebnis, was ihren Einfluss auf politische Prozesse widerspiegelt \autocite[vgl.][]{wim_faber_uber_2020}. Des Weiteren spielt die gesellschaftliche Wahrnehmung eine wesentliche Rolle. Im Gegensatz zu anderen sozialen Bewegungen - wie etwa den Protesten für Klimagerechtigkeit - gibt es bislang kaum massenhaften Widerstand gegen digitale Arbeitsverhältnisse. Während Bewegungen wie \enquote{Fridays for Future} existieren, im Zuge dessen sich über 130.000 Menschen in Deutschland explizit für die Zukunft des Klimawandels aussprechen \autocite[vgl.][]{fridays_for_future_ampel_2025}, gibt es mit dem \enquote{Fairwork}-Projekt ein vergleichsweise kleines Team an Forschern, die die Arbeitsbedingungen von digitalen Plattformen untersuchen und bewerten \autocite[vgl.][]{fairwork_faq_2025}. Auch wenn dieses Projekt nach Gesprächen mit Unternehmen Änderungen erreichen konnte, ist die mediale und soziale Präsenz dessen viel geringer als anderer sozialer Bewegungen - unter anderem der oben genannten \enquote{Fridays for Future}. Diese fehlende gesellschaftliche Mobilisierung, und der daraus resultierenden fehlende gesellschaftliche Druck, könnte dazu führen, dass politische Parteien keine offensichtliche Wähler*innengruppe haben, für die sie sich in dieser Thematik starkmachen möchten.
+
+Was kann nun also getan werden, um digitale Arbeit stärker in den politischen Fokus zu rücken? Als Vorbild dazu könnten politische Strategien und gesetzliche Initiativen anderer Regierungen dienen, wie zum Beispiel die der Spanischen, bei der bestimmte Aspekte der Plattformarbeit in den Vordergrund gerückt wurden. Hierzu müssen sich Betroffene starkmachen und zusammenfinden, wozu eine Plattform zum Austausch von Vorteil sein könnte. Auch alternative Wirtschaftsmodelle könnten eine Lösung sein. Anstatt den Giganten \enquote{Apple} durch einen Smartphone-Kauf zu unterstützen, könnten Alternativen wie \enquote{Fairphone} gekauft werden. Diese Firma stellt Transparenz, Alternativität und Nachhaltigkeit in den Fokus, zum Beispiel durch die Transparenz in Bezug auf die Methoden der Industrie oder die Nutzung recycleter Materialien \autocite[vgl.][]{fairphone_wir_2025}. Auch die \enquote{AirBnB}-Alternative \enquote{Fairbnb.coop} stellt sich als faire Buchungsplattform dar, die ihre Kommissionen den örtlichen Einwohnern spendet, um einen nachhaltigeren Tourismus zu ermöglichen \autocite[vgl.][]{fairbnbcoop_fairbnbcoop_nodate}. Der Nutzen solcher Alternativplattformen stellt zwar einen kleinen Beitrag dar, ist aber dennoch ein wichtiger Schritt um Machtasymmetrien in der Plattformökonomie abzubauen. Monopolisierung führt zu dem obengenannten Einfluss, weshalb Alternativmodelle langfristig dazu beitragen könnten, dass Digitalisierung nicht nur den Unternehmen, sondern auch den Arbeiter*innen zugutekommt. Zuletzt sollten Arbeitnehmer*innen ein Bewusstsein für den Einfluss der Digitalisierung entwickeln, was zum Beispiel durch das Formen von Bündnissen oder mehr öffentliche Debatten zum Thema \enquote{digitale Arbeit} geschehen könnte. Ziel sollte sein, dass Digitalisierung nicht zwangsläufig zu mehr Unsicherheiten führt, sondern als Chance gesehen wird, die Arbeitswelt gerechter zu gestalten. Damit dies geschieht, müssen politische Akteure, Arbeitsnehmervertretungen und die Gesellschaft gemeinsam an einer neuen Vision digitaler Arbeit arbeiten.
+
+\section{Fazit und Ausblick}
+In diesem wissenschaftlichen Essay wurde verdeutlicht, dass die digitale Transformation die Arbeitswelt grundlegend verändert, ohne jedoch angemessen in politischen Wahlprogrammen und Debatten berücksichtigt zu werden. Plattformkapitalismus, algorithmische Arbeitssteuerung und KI prägen zunehmend die aktuellen Beschäftigungsstrukturen und schaffen veränderte Arbeits- und Abhängigkeitsverhältnisse, die oft zu prekären Arbeitsbedingungen führen. Dennoch bleibt dieses Thema politisch unterrepräsentiert - eine Problematik, die sich auf einige zentrale Faktoren zurückführen lassen könnte: Die Langfristigkeit des digitalen Wandels, die schwer in kurzfristige Wahlkämpfe integriert werden kann, der wirtschaftliche Einfluss großer Technologieunternehmen, die aktiv Regelungen verhindern oder abschwächen, sowie die fehlende gesellschaftliche Mobilisierung für digitale Arbeitsrechte, die den politischen Druck erschwert. Wie gezeigt wurde, werden die sozialen Folgen der Digitalisierung in politischen Programmen oft vernachlässigt, besonders im Vergleich zu anderen gesellschaftlichen Herausforderungen wie etwa dem Klimawandel. Dennoch gibt es Lösungsansätze: strengere gesetzliche Rahmenbedingungen, gezielte gesellschaftliche Mobilisierung und Alternativplattformen könnten dazu beitragen, digitale Arbeit aus dem politischen Schatten herauszuführen. Um eine nachhaltige Veränderung zu erreichen ist die Aktivität des Einzelnen erforderlich, doch was passiert, wenn die Politik weiterhin wegschaut?
+
+\newpage
+Wenn Plattformkapitalismus ungehindert expandiert, ohne dass grundlegende Arbeitnehmerrechte gesichert werden, droht eine Zukunft, in der der Mensch zunehmend zu einem Datensatz in einer profitorientierten Arbeitswelt degradiert wird - einer Welt, in der es keine festen Arbeitszeiten, keine soziale Absicherung und keine kollektiven Verhandlungsstrukturen mehr gibt. Die Frage sollte also nicht lauten, ob sich die Politik mit der digitalen Transformation der Arbeit beschäftigen sollte, sondern \textbf{wann}. Die Herausforderungen der Digitalisierung und der Transformation sind allgegenwärtig und werden nicht weichen; die Zukunft wird \textbf{jetzt} gestaltet und es liegt an politischen Akteuren und der Gesellschaft, ob diese Gesellschaft von demokratischen Prinzipien oder von privilegiertem Interesse bestimmt wird.
+
+% print bibliography with heading in table of contents
+\newpage
+\fancyhead[C]{\nouppercase{\leftmark}}  % Statt \firstmark könnte \leftmark verwendet werden, um die Kapitelnamen im Header zu kontrollieren.
+
+\printbibliography
+\pagestyle{empty}
+
+% Starte Anhang
+\newpage
+\begin{appendices}
+    \section{Eidesstattliche Versicherung}
+    \begin{center}
+        \includegraphics[height=21cm, keepaspectratio]{versicherung.pdf}
+    \end{center}
+\end{appendices}
+
+\end{document}

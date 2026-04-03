@@ -1,0 +1,181 @@
+\documentclass[12pt]{article}
+\usepackage[T1, EU1]{fontenc}
+\usepackage[ngerman]{babel} % german as language
+\usepackage{csquotes}
+\usepackage[onehalfspacing]{setspace} % 1.5 Zeilenabstand
+\usepackage{parskip} % for paragraph line skip
+\usepackage{fancyhdr} % for headers
+\fancyhf{}
+\fancyhead[C]{\nouppercase{\firstmark}}
+\renewcommand{\headrulewidth}{0pt} % change line under header
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{fancy}
+\setlength{\headheight}{15.04742pt}
+\fancypagestyle{maintext}{ % pagestyle for main text for page numbers
+    \fancyhf{}
+    \fancyhead[C]{\nouppercase{\firstmark}}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+% Update \sectionmark to show first section in header
+\renewcommand{\sectionmark}[1]{%
+    \markboth{#1}{}
+}
+\renewcommand{\subsectionmark}[1]{}
+
+% Make that the sections don't have a number before them
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+% for tables/figures
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{array}
+\graphicspath{ {figures/} } % set path to figures
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\renewcommand{\listtablename}{Tabellenverzeichnis}
+
+% Appendix
+\usepackage[toc,page]{appendix}
+\renewcommand\appendixname{Anhang} % Change name to German
+\renewcommand\appendixpagename{Anhang}
+\renewcommand\appendixtocname{Anhang}
+
+
+% \usepackage{sectsty} -> falls section font size 14 haben muss
+% \sectionfont{\large\bfseries}
+
+% use geometry for page layout
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
+
+% Citation: BibLaTeX als author-year style, benötigt xelatex->biber->xelatex(2x) als recipe!
+\usepackage[
+backend=biber,
+style=apa]{biblatex}
+\addbibresource{refs.bib}
+
+% Start des Dokuments
+\begin{document}
+
+\thispagestyle{empty}
+% Add centered Title page
+%\begin{titlepage}
+    \begin{center}
+            
+        \LARGE
+        \textbf{Polanyis Konzept der 'fiktiven Ware' Arbeit und die Auswirkungen der Globalisierung auf die Textilindustrie}
+            
+        \vspace{0.2cm}
+        \Large
+        Essay 1
+
+        \vspace{2cm}
+            
+        \textbf{Lukas Schaffrath}\\
+        Matrikelnummer: 411793\\
+        Lehramt Technik/Englisch\\
+        Master für Gymnasien und Gesamtschulen
+            
+        \vspace{2cm}
+            
+        Ringseminar Transformationssoziologie: Technik- und Organisationssoziologie\\
+        Technik, Gender und Gesellschaft\\
+        Dozent: Tim Franke
+            
+        \vspace{2cm}
+            
+            
+        \Large
+        Lehrstuhl für Technik- und Organisationssoziologie\\
+        Institut für Soziologie\\
+        RWTH Aachen University\\
+        Wintersemester 2024/2025\\
+        14. Januar 2025
+            
+    \end{center}
+% \end{titlepage}
+
+% Add table of contents with emtpy page number
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\tableofcontents
+
+% List of figures and tables
+%\newpage
+%\thispagestyle{empty}
+%\listoffigures
+%\vspace{0.5cm}
+%\listoftables
+
+
+% New page, page count to 1
+\newpage
+\setcounter{page}{1}
+\pagestyle{maintext}
+
+% Add Main Text
+
+% Einleitung
+\section{Einleitung}
+Die Globalisierung, die in der zweiten Hälfte des 20. Jahrhunderts zu einer zentralen kraft für den globalen Wandel wurde \autocite[120]{polanyi_levitt_transformations_2019}, bringt nicht nur ökologische Herausforderungen - zum Beispiel in Form des Klimawandels - mit sich, sondern auch tiefgreifende Veränderungen in den gesellschaftlichen und politischen Strukturen. Besonders in der Arbeitswelt zeigen sich die negativen Auswirkungen einer globalisierten Wirtschaft, die durch den internationalen Wettbewerb und die Liberalisierung des Handels angetrieben wird. Arbeit scheint eine Ware geworden zu sein, die kapitalistisch und ekonomisch auf den individuellen Profit ausgelegt ist (ebd., S. 119). Da sich Arbeit auf ein Instrument bezieht, mit dem spezifischen Nutzen, andere Waren zu produzieren, spricht Karl Polanyi in seinem Werk \enquote{The Great Transformation} von einer \enquote{fiktiven Ware}, zuzüglich des Geldes und dem Boden \autocite[181]{ebner_karl_2021}.
+
+Karl Polanyi beschreibt Arbeit, neben Land und Geld, als „fiktive Ware“, da sie nicht wie gewöhnliche Waren für den Markt produziert wird, sondern aus der menschlichen Tätigkeit hervorgeht. Ihre Kommodifizierung, also die Behandlung als Ware, bedroht die soziale und natürliche Substanz der Gesellschaft, indem sie die Arbeitskraft den Mechanismen des Marktes unterwirft (ebd., S. 181). Die Globalisierung verschärft diese Entwicklung durch die Liberalisierung des Handels und die Verlagerung von Produktionsstätten in Länder mit niedrigeren Arbeitskosten \autocite[124]{polanyi_levitt_transformations_2019}. Besonders in der Textilindustrie zeigt sich dies durch die Einbettung in globale Lieferketten, die von unsicheren Arbeitsverhältnissen, niedrigen Löhnen und einem Mangel an Arbeitsschutz geprägt sind \autocite{bmz_umwelt-_2024}.
+
+Ein aktuelles Beispiel verdeutlicht dies: Der Einsturz der Rana-Plaza-Fabrik in Bangladesch im Jahr 2013, bei dem über tausend Menschen ums Leben kamen, legte die gravierenden Missstände in der globalen Textilindustrie offen. Dies zeigt, wie der Druck der Textilindustrie nicht nur zur Ausbeutung von Arbeiter*innen führt \autocite{bildung_vor_2018}, sondern auch die inhärenten Widersprüche der neoliberalen Globalisierung verstärkt. Die Neoklassische Wirtschaftstheorie, die Arbeit lediglich als Produktionsfaktor betrachtet, ignoriert die sozialen und ethischen Konsequenzen dieser Entwicklungen.
+
+Polanyis Konzept der „Doppelbewegung“ bietet eine zentrale Perspektive, um diese Dynamiken zu verstehen. Während die Marktexpansion die Kommodifizierung von Arbeit antreibt, formieren sich gleichzeitig soziale Gegenbewegungen, die versuchen, den sozialen und ökologischen Schaden zu begrenzen \autocite[123]{polanyi_levitt_transformations_2019}. Dieses Spannungsfeld spiegelt sich nicht zuletzt in den Debatten um Fair Trade und nachhaltige Lieferketten wider. Dieses Essay beschäftigt sich mit der zentralen Frage, wie Polanyis Konzept der \enquote{fiktiven Ware} in der globalen Textilindustrie wirksam ist, und inwieweit Arbeit als \enquote{fiktive Ware} in diesem Industriepfad existiert.
+
+% Hauptteil
+\section{Die Textilindustrie in einer globalisierten Welt}
+Karl Polanyi prägte in seinem Werk \enquote{The Great Transformation} den Begriff der \enquote{fiktiven Waren}, um Arbeit, Boden und Geld zu charakterisieren. Diese Elemente unterscheiden sich von anderen, echten Waren, da sie nicht für den Markt geschaffen wurden, sondern grundlegende Bestandteile der menschlichen Gesellschaft und natürlichen Umwelt darstellen \autocite[181]{ebner_karl_2021}.
+Besonders \textit{Arbeit} wird von Polanyi als kritische Kategorie hervorgehoben, da sie untrennbar mit der menschlichen Existenz verbunden ist. Eine Ware im traditionellen Sinne, so definiert der Duden, ist ein Handelsgut, dass gehandelt, verkauft oder getauscht wird \autocite[vgl.][]{duden_ware_nodate}. Im Gegensatz dazu wird Arbeit nur zur Ware, wenn sie durch soziale und wirtschaftliche Mechanismen in den Markt integriert wird. Polanyi beschreibt dies als einen Prozess der „Kommodifizierung“, der die sozialen und natürlichen Grundlagen destabilisiert, indem er menschliche Arbeitskraft in eine \enquote{warenförmige Marktdynamik} \autocite[181]{ebner_karl_2021} einbindet.
+
+Ein realistisches Beispiel für dieses Prinzip findet sich in der industriellen Revolution wieder, als die Einführung von Arbeitsmärkten eine zentrale Rolle in der Etablierung des Fabriksystems spielte. Hier wurden Land, Arbeit, Menschen und die Natur zu produktionsunterstützenden Instrumenten tranformiert, deren Marktpreis von Angebot und nachfrage bestimmt wurden \autocite[122]{polanyi_levitt_transformations_2019}. 
+
+Die Gefahren der Kommodifizierung von Arbeit reichen jedoch über historische Entwicklungen hinaus. Sie manifestieren sich in der modernen Welt durch die zunehmende Prekarisierung von Arbeitsverhältnissen, etwa in der globalen Textilindustrie. Ein Beispiel ist der Einsturz der Rana-Plaza-Fabrik in Bangladesch, bei dem die Ausbeutung von Arbeiter*innen und mangelhafte Sicherheitsstandards sichtbar wurden. Im Jahr 2013 stürzte die achtstöckige Textilfabrik, mit mehr als 5000 Mitarbeitern, die für bekannte Modemarken wie unter anderem dem deutschen Einzelhandelsunternehmen KiK produzierten, ein. Über 1000 Menschen fanden hier ihren Tot, da Sicherheits- und Gesundheitsstandards nicht beachtet werden mussten, und demnach aus Gewinn-Gründen vernachlässigt wurden \autocite[vgl.][]{bildung_vor_2018}. Arbeit ist hier eine kommodifizierte Ware, da sie als Kostenfaktor betrachtet wird, der auf Minimierung ausgelegt ist, um den Gewinn bestmöglich zu steigern. Menschen in finanziell benachteiligten Gebieten werden in eine Abhängigkeit zu der gefährlichen Arbeit getrieben, da sie als direkte Folge der Globalisierung (und dem Ausbau der globalen Textilindustrie) - inklusive der Auslagerung der Textilproduktion in Gebiete mit kostengünstigeren Produktionskosten - der Monopolstellung der Textilindustrie in ihren Wohngebieten ausgesetzt sind. Dies verdeutlicht Polanyis Argument, dass die Marktlogik die soziale Substanz der Gesellschaft gefährdet und Arbeiter*innen in eine prekäre Abhängigkeit drängt \autocite[181]{ebner_karl_2021}.
+
+Die Globalisierung hat die von Polanyi beschriebenen Prozesse in einem globalen Maßstab verstärkt. Internationale Agenturen und Kreditoren, sowie Großkonzerne fördern die Liberalisierung von Märkten und Kapitalbewegungen, wodurch Länder gezwungen werden, ihre Produktionskosten zu senken, um wettbewerbsfähig zu bleiben \autocite[vgl.][121]{polanyi_levitt_transformations_2019}. Dies führt zu einer Verlagerung der Produktion in Billiglohnländer und einer Schwächung der Arbeitsrechte in vielen Regionen.
+In der Textilindustrie wird diese Dynamik besonders deutlich. Unternehmen wie H\&M und Zara verlagern ihre Produktion nach Bangladesch oder andere Fernöstliche Ländern, in denen Löhne niedrig und Arbeitsschutzmaßnahmen oft unzureichend sind \autocite[vgl.][]{che_berberich_dunkle_2016}. Eine Studie von Oxfam zeigt, dass Textilarbeiter*innen in Myanmar meist - trotz circa 11-stündiger Tagesarbeitszeit und einer 6-Tage Woche -  weniger als den existenzsichernden Lohn verdienen. Obwohl 2015 ein Mindestlohn von damals 83\$ eingeführt wurde, legen die Ergebnisse der Studie nahe, dass dies nicht ausreicht, um die eigene Familie zu versorgen \autocite[vgl.][]{oxfam_deutschland_textilindustrie_2015}. Diese Praxis illustriert, wie Marktmechanismen durch die Globalisierung verschärft werden und soziale Ungleichheit verstärken.
+
+Deregulierungsmaßnahmen spielen dabei eine zentrale Rolle. Sie schwächen staatliche Eingriffe in Arbeitsmärkte und fördern \enquote{flexible} Arbeitsverhältnisse, die oft mit Unsicherheit und mangelnden sozialen Sicherheiten verbunden sind. Kari Polanyi Levitt bezeichnet diese Entwicklungen als Teil der „dritten Welle der kapitalistischen Expansion“, in der wirtschaftliche Interessen gegenüber sozialen Belangen dominieren \autocite[123]{polanyi_levitt_transformations_2019}.
+
+Die Auswirkungen der Kommodifizierung sind vielfältig und betreffen sowohl die individuellen Arbeiter*innen als auch die gesellschaftliche Ordnung. Niedrige Löhne, lange Arbeitszeiten und unsichere Arbeitsbedingungen prägen die Realität in der Textilindustrie \autocite[vgl.][]{che_berberich_dunkle_2016}. Diese Situation führt nicht nur zu wachsender Ungleichheit, sondern auch zu einer Schwächung sozialer Kohäsion in den betroffenen Gesellschaften \autocite[182]{ebner_karl_2021}.
+Nationalstaaten stehen vor dem Dilemma, Investitionen anzuziehen und gleichzeitig Arbeitsrechte zu schützen. In Ländern wie Bangladesch wurden Gewerkschaften und Streikbewegungen oft unterdrückt, um die Interessen internationaler Investoren zu wahren \Autocite[vgl.][121]{polanyi_levitt_transformations_2019}. Diese Dynamik veranschaulicht Polanyis Konzept der \enquote{Doppelbewegung}, bei der einerseits die Expansion der Marktlogik versucht, alle Bereiche des Lebens - inklusive Arbeit, Boden und Geld - zu kommodifizieren und somit den Marktmechanismen zu unterwerfen, andererseits aber gesellschaftliche Bewegungen entstehen, die versuchen, diese Prozesse einzudämmen \autocite[182]{ebner_karl_2021}. Dies unterstützen Studien wie die oben vorgestellte von Oxfam, sowie weitere Organisationen, die sich mit Menschenrechten beschäftigen. Auch staatliche Einrichtungen haben - vor allem ausgehend der Ereignisse in 2013 - unterstützende Maßnahmen eingeleitet, wie zum Beispiel das BMZ (Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung) in seinem Beitrag verdeutlicht \Autocite[vgl.][]{bmz_umwelt-_2024}. 
+
+Praktische Beispiele aus Ländern wie Vietnam oder Kambodscha zeigen die Spannungsfelder zwischen wirtschaftlicher Entwicklung und sozialen Rechten. In Vietnam führen Gewerkschaften regelmäßig Streiks durch, um Lohnerhöhungen und bessere Arbeitsbedingungen zu fordern. Diese Bewegungen sind ein Ausdruck des gesellschaftlichen Widerstands gegen die Marktexpansion \autocite[vgl.][]{deutsche_welle_vietnam_2015}.
+Gegenbewegungen, die sich gegen die negativen Folgen der Globalisierung richten, spielen eine zunehmend wichtige Rolle. Bewegungen und Organisationen wie die oben erwähnten versuchen, den Druck auf Unternehmen zu erhöhen, soziale Verantwortung zu übernehmen, und greifen Polanyis Argument auf, dass gesellschaftliche Interventionen notwendig sind, um die Selbstregulierung des Marktes einzuschränken \Autocite[127]{polanyi_levitt_transformations_2019}.
+
+Eine zentrale Rolle spielen dabei auch Konsument*innen. Initiativen wie \enquote{Slow Fashion} fördern einen bewussteren Konsum und regen dazu an, die Produktionsbedingungen in der Modeindustrie zu hinterfragen. Hier handelt es sich um ein Konzept, dass zeitlose und langelebige Kleidung kurzweiligen Trends vorzieht und somit einen grundlegenden Wandel in der Textilindustrie erreichen möchte. Es wird als eine Gegenbewegung angesehen, die sich auf Basis der Entwicklungen der Textilindustrie verbreitete \autocite[vgl.][]{nina_kegel_slow_nodate}. 
+
+Trotz dieser Bemühungen bleiben strukturelle Veränderungen schwierig. Globale Lieferketten sind komplex und oft intransparent, vor allem durch die globalen Produktionsstandorte und weltweite Verbreitung der Hersteller \autocite[vgl.][]{imsirovic_hinter_2023}.
+
+\section{Fazit und Ausblick}
+Die vorangegangene Analyse hat gezeigt, dass die Globalisierung die Kommodifizierung von Arbeit verstärkt hat, insbesondere in der Textilindustrie, wo Arbeiter*innen oft unter prekären Bedingungen beschäftigt werden. Wie Polanyi betont, ist Arbeit keine Ware im eigentlichen Sinne, sondern untrennbar mit der menschlichen Existenz verbunden. Dennoch wird sie im globalisierten Wirtschaftssystem als austauschbarer Produktionsfaktor behandelt. Die Globalisierung hat diesen Prozess durch internationale Handelsabkommen, Deregulierungsmaßnahmen und die Verlagerung der Produktion in Billiglohnländer erheblich beschleunigt. Dies zeigt sich besonders in Ländern wie Bangladesch, Vietnam und Myanmar, wo niedrige Löhne, lange Arbeitszeiten und unzureichender Arbeitsschutz die Realität vieler Textilarbeiterinnen prägen.
+
+Die Prekarisierung der Arbeitsverhältnisse, wie sie beispielsweise im Einsturz der Rana-Plaza-Fabrik 2013 sichtbar wurde, verdeutlicht Polanyis Warnung, dass die Kommodifizierung von Arbeit die soziale und natürliche Substanz der Gesellschaft gefährdet \autocite[181]{ebner_karl_2021}. Die daraus resultierenden Ungleichheiten, die Schwächung nationaler Regulierungskapazitäten und die Ausbeutung von Arbeitskräften zeigen, wie die Marktlogik über soziale Belange gestellt wird. Gleichzeitig illustriert die globale Textilindustrie Polanyis Konzept der \enquote{Doppelbewegung}: Während die Marktlogik die Arbeitskraft zunehmend kommodifiziert, entstehen gesellschaftliche Gegenbewegungen, die versuchen, diese Dynamiken einzudämmen \autocite[127]{polanyi_levitt_transformations_2019}.
+
+Die Textilindustrie steht exemplarisch für den Konflikt zwischen Marktlogik und sozialer Substanz. Die von Polanyi beschriebene \enquote{Doppelbewegung} manifestiert sich hier besonders deutlich: Auf der einen Seite die Expansion der Marktkräfte, die alle Bereiche des Lebens zu kommodifizieren versucht, auf der anderen Seite der Versuch von Gewerkschaften, NGOs und Konsument*innen, die negativen Folgen dieser Prozesse zu begrenzen. Trotz dieser Bemühungen bleiben viele strukturelle Probleme ungelöst, insbesondere aufgrund der Intransparenz globaler Lieferketten und der Macht multinationaler Unternehmen.
+
+Kari Polanyi Levitts Kritik an der neoliberalen Agenda ist in diesem Zusammenhang besonders relevant. Sie zeigt auf, dass die Deregulierung von Arbeitsmärkten und die Dominanz wirtschaftlicher Interessen langfristig soziale Ungleichheit und ökologische Schäden verstärken. Gleichzeitig betont sie die Notwendigkeit, alternative wirtschaftliche Modelle zu entwickeln, die soziale und ökologische Belange stärker berücksichtigen (ebd.).
+
+Die Analyse macht deutlich, dass ein grundlegender Wandel erforderlich ist, um die negativen Folgen der Globalisierung zu bewältigen. Erstens ist eine stärkere Regulierung der Arbeitsmärkte notwendig, um prekäre Arbeitsverhältnisse zu reduzieren und die Rechte von Arbeitnehmerinnen zu stärken. Zweitens könnten Initiativen wie \enquote{Slow Fashion} und Fair-Trade-Programme dazu beitragen, Konsumentinnen für nachhaltigen Konsum zu sensibilisieren und den Druck auf Unternehmen zu erhöhen, soziale Verantwortung zu übernehmen.
+Darüber hinaus bedarf es internationaler Bemühungen, um die Transparenz in globalen Lieferketten zu erhöhen und multinationale Unternehmen stärker in die Verantwortung zu nehmen. Dies könnte durch verbindliche gesetzliche Regelungen und strengere Überwachungsmechanismen erreicht werden, was zunehmend in den vergangenen Jahren gefordert und schrittweise erreicht wurde \autocite[vgl.][]{nina_kegel_slow_nodate}.
+
+Die Herausforderungen der Globalisierung verlangen nach innovativen Lösungen, die über bestehende wirtschaftliche Paradigmen hinausgehen. Demokratische Kontrolle, zivilgesellschaftliches Engagement und ein bewusster Konsum können dazu beitragen, eine gerechtere und nachhaltigere Wirtschaftsordnung zu schaffen. Abschließend bleibt der dringende Appell: Die Art und Weise, wie wir Arbeit und Wirtschaft betrachten, muss sich grundlegend ändern. Die Werte einer gerechten Gesellschaft und der Schutz der natürlichen Umwelt sollten im Mittelpunkt stehen – nicht die reine Profitmaximierung. Jede*r Einzelne kann dazu beitragen, diese Veränderung voranzutreiben, sei es durch bewusstes Konsumverhalten, gesellschaftliches Engagement oder politische Teilhabe. Die Zukunft der Arbeit und der Gesellschaft liegt in unseren Händen – und es liegt an uns, sie aktiv zu gestalten.
+
+% print bibliography with heading in table of contents
+\newpage
+\printbibliography
+\pagestyle{empty}
+
+% Starte Anhang
+\newpage
+\begin{appendices}
+    \section{Eidesstattliche Versicherung}
+    \begin{center}
+        \includegraphics[height=21cm, keepaspectratio]{versicherung.pdf}
+    \end{center}
+\end{appendices}
+
+\end{document}
